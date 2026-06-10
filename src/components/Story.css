@@ -2,8 +2,8 @@
 
 .story-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 60px;
   align-items: center;
 }
 
@@ -51,15 +51,17 @@
   clip-path: inset(0 0 0 0);
 }
 
-.story-visual-wrap svg {
+.story-visual-wrap img {
   width: 100%;
-  max-width: 380px;
+  max-width: 460px;
   height: auto;
+  display: block;
+  border-radius: 12px;
 }
 
 @media (max-width: 768px) {
   .story-grid { grid-template-columns: 1fr; gap: 48px; }
-  .story-visual-wrap svg { max-width: 280px; }
+  .story-visual-wrap img { max-width: 320px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

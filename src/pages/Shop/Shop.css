@@ -46,8 +46,9 @@
 .product-card {
   background: white;
   border-radius: 16px;
-  padding: 40px 28px 32px;
+  padding: 0 28px 24px;
   text-align: center;
+  overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
   display: flex;
   flex-direction: column;
@@ -78,9 +79,9 @@
 .product-card-link:active { transform: scale(0.97); }
 
 .product-visual {
-  width: 140px;
-  height: 200px;
-  margin: 0 auto 24px;
+  width: auto;
+  height: 220px;
+  margin: 0 -28px 20px;
   position: relative;
 }
 
@@ -89,7 +90,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 12px;
+  border-radius: 0;
 }
 
 .product-badge {
