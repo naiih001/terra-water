@@ -79,9 +79,9 @@ export function Cart() {
                   <span>Total</span>
                   <span>${total.toFixed(2)}</span>
                 </div>
-                <button class="btn btn-primary" style="width:100%" disabled>
-                  Checkout — coming soon
-                </button>
+                <a href="/checkout" class="btn btn-primary" style="width:100%;display:block;text-decoration:none">
+                  Checkout
+                </a>
                 <a href="/shop" class="cart-continue">Continue shopping</a>
               </aside>
             </div>

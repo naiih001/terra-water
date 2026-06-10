@@ -4,6 +4,7 @@ import { Home } from './pages/Home/index.jsx';
 import { Shop } from './pages/Shop/index.jsx';
 import { Product } from './pages/Product/index.jsx';
 import { Cart } from './pages/Cart/index.jsx';
+import { Checkout } from './pages/Checkout/index.jsx';
 import { NotFound } from './pages/_404.jsx';
 import './style.css';
 
@@ -17,6 +18,7 @@ export function App() {
           <Shop path="/shop" />
           <Product path="/shop/:slug" />
           <Cart path="/cart" />
+          <Checkout path="/checkout" />
           <NotFound default />
         </Router>
       </main>
