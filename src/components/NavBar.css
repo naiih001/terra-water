@@ -26,10 +26,6 @@
   transition: opacity 200ms ease;
 }
 
-.site-nav .logo {
-  transition: opacity 200ms ease;
-}
-
 .site-nav .nav-links {
   display: flex;
   gap: 36px;
@@ -45,6 +41,50 @@
   transition: color 200ms ease;
 }
 
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-signin {
+  padding: 8px 18px;
+  border: 1.5px solid var(--text-light);
+  border-radius: 100px;
+  background: transparent;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-light);
+  cursor: pointer;
+  transition: border-color 200ms ease, color 200ms ease;
+}
+
+.nav-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-user-name {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--forest);
+}
+
+.nav-signout {
+  padding: 6px 14px;
+  border: none;
+  border-radius: 100px;
+  background: transparent;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text-light);
+  cursor: pointer;
+  transition: background 150ms ease, color 150ms ease;
+}
+
 .cart-link {
   position: relative;
   color: var(--text-light);
@@ -53,6 +93,16 @@
 
 @media (hover: hover) and (pointer: fine) {
   .site-nav .logo:hover { opacity: 0.7; }
+
+  .nav-signin:hover {
+    border-color: var(--forest);
+    color: var(--forest);
+  }
+
+  .nav-signout:hover {
+    background: rgba(0, 0, 0, 0.04);
+    color: var(--forest);
+  }
 
   .site-nav .nav-links a:hover { color: var(--forest); }
 
@@ -98,6 +148,10 @@
   }
 
   .site-nav .nav-links {
+    display: none;
+  }
+
+  .nav-user-name {
     display: none;
   }
 }

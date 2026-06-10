@@ -87,7 +87,7 @@ export function Product({ slug }: { slug: string }) {
                 .map((p) => (
                   <a key={p.slug} href={`/shop/${p.slug}`} class="more-card">
                     <div class="more-card-visual">
-                <BottleSvg slug={product.slug} />
+                <BottleSvg slug={p.slug} />
                     </div>
                     <h3>{p.name}</h3>
                     <p class="product-price">${p.price.toFixed(2)}</p>

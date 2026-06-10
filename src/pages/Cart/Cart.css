@@ -79,8 +79,8 @@
 }
 
 .cart-item-visual {
-  width: 48px;
-  height: 76px;
+  width: 56px;
+  height: 88px;
   flex-shrink: 0;
 }
 
@@ -88,7 +88,8 @@
 .cart-item-visual .product-img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
+  border-radius: 12px;
 }
 
 .cart-item-info {

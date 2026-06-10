@@ -8,5 +8,3 @@ export function getProductImage(slug: string): string {
   }
   return map[slug] || '/images/350ml.png'
 }
-
-export const HERO_IMAGE = '/images/Gemini_Generated_Image_2uj02uj02uj02uj0.png'
