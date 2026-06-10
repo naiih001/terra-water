@@ -2,6 +2,7 @@ import { useSignal } from '@preact/signals'
 import { cartCount } from '../stores/cart.js'
 import { currentUser, isLoggedIn, logout } from '../stores/auth.js'
 import { AuthModal } from './AuthModal.jsx'
+import { MobileNav } from './MobileNav.jsx'
 import './NavBar.css'
 
 export function NavBar() {
@@ -9,6 +10,7 @@ export function NavBar() {
   const user = currentUser.value
   const loggedIn = isLoggedIn.value
   const showAuth = useSignal(false)
+  const showMobileNav = useSignal(false)
 
   return (
     <>
@@ -19,6 +21,18 @@ export function NavBar() {
           <li><a href="/#story">Story</a></li>
           <li><a href="/#discover">Discover</a></li>
         </ul>
+        <button
+            class="mobile-nav-toggle"
+            onClick={() => { showMobileNav.value = !showMobileNav.value }}
+            aria-label={showMobileNav.value ? 'Close menu' : 'Open menu'}
+            aria-expanded={showMobileNav.value}
+          >
+            <div class="hamburger-lines">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </button>
         <div class="nav-actions">
           {loggedIn ? (
             <div class="nav-user">
@@ -40,6 +54,11 @@ export function NavBar() {
         </div>
       </nav>
       {showAuth.value && <AuthModal onClose={() => { showAuth.value = false }} />}
+      <MobileNav
+        isOpen={showMobileNav.value}
+        onClose={() => { showMobileNav.value = false }}
+        onSignIn={() => { showAuth.value = true }}
+      />
     </>
   )
 }

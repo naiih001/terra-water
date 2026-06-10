@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-06-10T00:00:00.000Z",
+  "title": "Design System: Terra",
+  "extensions": {
+    "colorMeta": {
+      "warm-stone": { "role": "neutral", "displayName": "Warm Stone", "canonical": "oklch(94.5% 0.01 80)", "tonalRamp": ["oklch(94.5% 0.01 80)", "oklch(92% 0.012 80)", "oklch(89% 0.015 80)", "oklch(84% 0.018 80)", "oklch(78% 0.022 80)", "oklch(62% 0.025 80)", "oklch(45% 0.02 80)", "oklch(28% 0.015 80)"] },
+      "warm-stone-deep": { "role": "neutral", "displayName": "Warm Stone Deep", "canonical": "oklch(89% 0.015 80)", "tonalRamp": ["", "", "", "", "", "", "", ""] },
+      "forest": { "role": "primary", "displayName": "Forest", "canonical": "oklch(32.5% 0.06 160)", "tonalRamp": ["oklch(92% 0.06 160)", "oklch(82% 0.06 160)", "oklch(72% 0.06 160)", "oklch(62% 0.06 160)", "oklch(52% 0.06 160)", "oklch(42% 0.06 160)", "oklch(32.5% 0.06 160)", "oklch(22% 0.06 160)"] },
+      "sage": { "role": "secondary", "displayName": "Sage", "canonical": "oklch(60% 0.06 155)", "tonalRamp": ["oklch(92% 0.06 155)", "oklch(82% 0.06 155)", "oklch(72% 0.06 155)", "oklch(62% 0.06 155)", "oklch(52% 0.06 155)", "oklch(42% 0.06 155)", "oklch(32% 0.06 155)", "oklch(22% 0.06 155)"] },
+      "spring-blue": { "role": "tertiary", "displayName": "Spring Blue", "canonical": "oklch(66% 0.08 225)", "tonalRamp": ["oklch(92% 0.08 225)", "oklch(82% 0.08 225)", "oklch(72% 0.08 225)", "oklch(66% 0.08 225)", "oklch(55% 0.08 225)", "oklch(45% 0.08 225)", "oklch(35% 0.08 225)", "oklch(25% 0.08 225)"] },
+      "ink": { "role": "neutral", "displayName": "Ink", "canonical": "oklch(17% 0.008 0)", "tonalRamp": ["", "", "", "", "", "", "", ""] },
+      "stone": { "role": "neutral", "displayName": "Stone", "canonical": "oklch(43% 0.015 65)", "tonalRamp": ["", "", "", "", "", "", "", ""] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero headline only. The single largest statement on the page." },
+      "headline": { "displayName": "Headline", "purpose": "Section headers with text-wrap: balance." },
+      "title": { "displayName": "Title", "purpose": "Card titles, product names, modal headers." },
+      "body": { "displayName": "Body", "purpose": "All paragraph text, max-width 75ch." },
+      "label": { "displayName": "Label", "purpose": "Buttons, badges, nav links, small uppercase labels." }
+    },
+    "shadows": [
+      { "name": "hover-lift", "value": "0 8px 24px rgba(0,0,0,0.08)", "purpose": "Card and button hover state — not used at rest." },
+      { "name": "modal-backdrop", "value": "0 24px 64px rgba(0,0,0,0.12)", "purpose": "Auth modal — the only large elevation in the system." },
+      { "name": "nav-blur", "value": "linear-gradient(to bottom, var(--cream) 0%, transparent 100%)", "purpose": "Nav bar background gradient + backdrop-filter(8px)." }
+    ],
+    "motion": [
+      { "name": "ease-out", "value": "cubic-bezier(0.23, 1, 0.32, 1)", "purpose": "Default easing for state transitions and entrances." },
+      { "name": "entrance-stagger-base", "value": "300ms", "purpose": "Base duration for feature card scroll-reveal stagger chain." },
+      { "name": "entrance-stagger-delay", "value": "60ms", "purpose": "Per-item delay increment in stagger chains." }
+    ],
+    "breakpoints": [
+      { "name": "mobile", "value": "768px", "purpose": "Single breakpoint. Grids collapse, nav links hidden, padding reduces." }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Primary CTA — Forest background, white text, full pill shape.",
+      "html": "<button class=\"ds-btn-primary\">Shop now</button>",
+      "css": ".ds-btn-primary { background: #1a3323; color: #fff; padding: 14px 32px; border: none; border-radius: 100px; font-family: Inter, system-ui, sans-serif; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.02em; cursor: pointer; transition: transform 160ms cubic-bezier(0.23,1,0.32,1), box-shadow 200ms ease, background 200ms ease; will-change: transform; } .ds-btn-primary:hover { box-shadow: 0 8px 24px rgba(26,51,35,0.2); } .ds-btn-primary:active { transform: scale(0.97); }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Secondary CTA — transparent, Forest stroke and text.",
+      "html": "<button class=\"ds-btn-secondary\">Discover the source</button>",
+      "css": ".ds-btn-secondary { background: transparent; color: #1a3323; padding: 14px 32px; border: 1.5px solid #1a3323; border-radius: 100px; font-family: Inter, system-ui, sans-serif; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.02em; cursor: pointer; transition: transform 160ms cubic-bezier(0.23,1,0.32,1), background 200ms ease; will-change: transform; } .ds-btn-secondary:hover { background: rgba(26,51,35,0.06); } .ds-btn-secondary:active { transform: scale(0.97); }"
+    },
+    {
+      "name": "Feature Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Feature card — white background, 16px radius, centered content.",
+      "html": "<div class=\"ds-card-feature\"><div class=\"ds-card-feature-icon\"><svg viewBox=\"0 0 48 48\" width=\"48\" height=\"48\"><path d=\"M24 6 Q12 16 12 28 Q12 38 24 40 Q36 38 36 28 Q36 16 24 6Z\" fill=\"#1a3323\" opacity=\"0.1\"/><path d=\"M24 6 Q12 16 12 28 Q12 38 24 40 Q36 38 36 28 Q36 16 24 6Z\" stroke=\"#1a3323\" stroke-width=\"1.2\" opacity=\"0.3\"/></svg></div><h3 class=\"ds-card-feature-title\">100% Natural</h3><p class=\"ds-card-feature-desc\">Nothing added. Nothing taken away.</p></div>",
+      "css": ".ds-card-feature { background: #fff; border-radius: 16px; padding: 40px 28px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.04); transition: transform 200ms cubic-bezier(0.23,1,0.32,1), box-shadow 200ms ease; } .ds-card-feature:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.08); transform: translateY(-2px); } .ds-card-feature-icon { width: 48px; height: 48px; margin: 0 auto 20px; } .ds-card-feature-title { font-family: 'Playfair Display', Georgia, serif; font-size: 1.15rem; font-weight: 400; color: #1a3323; margin: 0 0 12px; } .ds-card-feature-desc { font-family: Inter, system-ui, sans-serif; font-size: 0.9rem; line-height: 1.7; color: #6b6560; font-weight: 300; margin: 0; }"
+    },
+    {
+      "name": "Product Card",
+      "kind": "card",
+      "refersTo": "product-card",
+      "description": "Shop product card — image, name, price, optional badge.",
+      "html": "<a class=\"ds-card-product\" href=\"#\"><div class=\"ds-card-product-visual\"><div style=\"width:100%;height:100%;background:#e8e3d8;border-radius:0;\"></div></div><span class=\"ds-badge\">New</span><h3 class=\"ds-card-product-title\">750 ml</h3><p class=\"ds-card-product-price\">$2.40</p></a>",
+      "css": ".ds-card-product { display: flex; flex-direction: column; background: #fff; border-radius: 16px; padding: 0 28px 24px; text-align: center; overflow: hidden; text-decoration: none; color: inherit; box-shadow: 0 2px 8px rgba(0,0,0,0.04); transition: transform 200ms cubic-bezier(0.23,1,0.32,1), box-shadow 200ms ease; } .ds-card-product:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.08); transform: translateY(-2px); } .ds-card-product:active { transform: scale(0.97); } .ds-card-product-visual { width: auto; height: 220px; margin: 0 -28px 20px; } .ds-card-product-title { font-family: 'Playfair Display', Georgia, serif; font-size: 1.3rem; font-weight: 400; color: #1a3323; margin: 0 0 8px; } .ds-card-product-price { font-size: 1.1rem; font-weight: 500; color: #7a9b7a; margin: 0; } .ds-badge { display: inline-block; padding: 4px 12px; background: #7a9b7a; color: #fff; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; border-radius: 100px; margin-bottom: 12px; align-self: center; }"
+    },
+    {
+      "name": "Text Input",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Form input field — light stroke, 10px radius, Sage focus ring.",
+      "html": "<div><label class=\"ds-input-label\">Email</label><input class=\"ds-input\" type=\"email\" placeholder=\"your@email.com\"></div>",
+      "css": ".ds-input-label { display: block; font-family: Inter, system-ui, sans-serif; font-size: 0.82rem; font-weight: 500; color: #6b6560; margin-bottom: 6px; letter-spacing: 0.02em; } .ds-input { width: 100%; padding: 12px 16px; border: 1.5px solid #e0e0e0; border-radius: 10px; font-family: Inter, system-ui, sans-serif; font-size: 0.95rem; color: #1c1c1c; background: #fff; box-sizing: border-box; transition: border-color 200ms ease, box-shadow 200ms ease; } .ds-input:focus { outline: none; border-color: #7a9b7a; box-shadow: 0 0 0 3px rgba(122,155,122,0.15); } .ds-input::placeholder { color: #6b6560; opacity: 0.5; }"
+    },
+    {
+      "name": "Site Navigation",
+      "kind": "nav",
+      "refersTo": "nav",
+      "description": "Fixed top nav bar with logo, links, sign-in, and cart icon.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-logo\" href=\"#\">TERRA</a><div class=\"ds-nav-links\"><a href=\"#\">Shop</a><a href=\"#\">Story</a><a href=\"#\">Discover</a></div><div class=\"ds-nav-actions\"><button class=\"ds-nav-signin\">Sign in</button><button class=\"ds-nav-cart\" aria-label=\"Cart\"><svg width=\"22\" height=\"22\" viewBox=\"0 0 22 22\" fill=\"none\"><rect x=\"4\" y=\"7\" width=\"14\" height=\"13\" rx=\"2\" stroke=\"currentColor\" stroke-width=\"1.3\"/><path d=\"M7 7V5a4 4 0 0 1 8 0v2\" stroke=\"currentColor\" stroke-width=\"1.3\" stroke-linecap=\"round\"/></svg></button></div></nav>",
+      "css": ".ds-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 20px 48px; max-width: 1280px; margin: 0 auto; width: 100%; background: linear-gradient(to bottom, #f5f2eb 0%, transparent 100%); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); box-sizing: border-box; } .ds-nav-logo { font-family: 'Playfair Display', Georgia, serif; font-size: 1.5rem; font-weight: 600; letter-spacing: 0.08em; color: #1a3323; text-decoration: none; } .ds-nav-links { display: flex; gap: 36px; } .ds-nav-links a { text-decoration: none; color: #6b6560; font-family: Inter, system-ui, sans-serif; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.04em; transition: color 200ms ease; } .ds-nav-links a:hover { color: #1a3323; } .ds-nav-actions { display: flex; align-items: center; gap: 20px; } .ds-nav-signin { padding: 8px 18px; border: 1.5px solid #6b6560; border-radius: 100px; background: transparent; font-family: Inter, system-ui, sans-serif; font-size: 0.8rem; font-weight: 500; color: #6b6560; cursor: pointer; transition: border-color 200ms ease, color 200ms ease; } .ds-nav-signin:hover { border-color: #1a3323; color: #1a3323; } .ds-nav-cart { position: relative; background: none; border: none; padding: 0; color: #6b6560; cursor: pointer; transition: color 200ms ease; } .ds-nav-cart:hover { color: #1a3323; }"
+    },
+    {
+      "name": "Quantity Picker",
+      "kind": "custom",
+      "refersTo": "qty-picker",
+      "description": "Inline pill with decrement/increment buttons flanking a centered value.",
+      "html": "<div class=\"ds-qty\"><button class=\"ds-qty-btn\" disabled aria-label=\"Decrease\"><svg width=\"14\" height=\"2\" viewBox=\"0 0 14 2\"><path d=\"M1 1h12\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"/></svg></button><span class=\"ds-qty-value\">1</span><button class=\"ds-qty-btn\" aria-label=\"Increase\"><svg width=\"14\" height=\"14\" viewBox=\"0 0 14 14\"><path d=\"M1 7h12M7 1v12\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"/></svg></button></div>",
+      "css": ".ds-qty { display: inline-flex; align-items: center; gap: 0; border: 1.5px solid #e8e3d8; border-radius: 100px; overflow: hidden; } .ds-qty-btn { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border: none; background: transparent; color: #6b6560; cursor: pointer; transition: background 150ms ease, color 150ms ease; } .ds-qty-btn:hover:not(:disabled) { background: #e8e3d8; color: #1a3323; } .ds-qty-btn:disabled { opacity: 0.3; cursor: default; } .ds-qty-value { min-width: 32px; text-align: center; font-family: Inter, system-ui, sans-serif; font-size: 0.95rem; font-weight: 500; color: #1a3323; font-variant-numeric: tabular-nums; }"
+    },
+    {
+      "name": "Auth Tabs (Segmented Control)",
+      "kind": "custom",
+      "refersTo": "nav-tab",
+      "description": "Segmented pill control for auth modal — dark container, white active pill.",
+      "html": "<div class=\"ds-tabs\"><button class=\"ds-tab active\">Sign in</button><button class=\"ds-tab\">Register</button></div>",
+      "css": ".ds-tabs { display: flex; gap: 4px; padding: 4px; background: #e8e3d8; border-radius: 100px; } .ds-tab { flex: 1; padding: 8px 16px; border: none; border-radius: 100px; background: transparent; font-family: Inter, system-ui, sans-serif; font-size: 0.85rem; font-weight: 500; color: #6b6560; cursor: pointer; transition: background 200ms ease, color 200ms ease, box-shadow 200ms ease; } .ds-tab.active { background: #fff; color: #1a3323; box-shadow: 0 1px 4px rgba(0,0,0,0.06); } .ds-tab:hover:not(.active) { color: #1a3323; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Source",
+    "overview": "Terra's visual system starts from the same place its water does: the mountain spring. Everything else is just what's necessary to present it clearly. The palette draws from stone, forest, and water — not as decoration, but as a honest reflection of origin. The typography pairs a refined serif for storytelling with a clean sans for commerce, never competing for attention.\n\nThe system explicitly rejects overdesigned \"natural\" tropes: no wood textures, no kraft paper, no doodle leaves, no glassmorphism, no heavy gradients. Every element earns its place through clarity and purpose. Warmth comes from the photographic content (mountains, spring, bottle) and the serif's character, not from a tinted background.",
+    "keyCharacteristics": [
+      "Warm minimalism — earthy without being rustic, refined without being cold",
+      "Serif storytelling for the brand narrative, sans commerce for the shop",
+      "Rounded but grounded — pill buttons and 16px card corners feel tactile, not playful",
+      "Flat surfaces by default; depth conveyed through tonal layering, not shadow",
+      "Generous whitespace creates breathing room for an everyday audience"
+    ],
+    "rules": [
+      { "name": "The Tonal Layering Rule", "body": "Depth is conveyed by shifting background values within the neutral family, not by drop shadows. A card on Warm Stone sits at white; an alternating section uses Warm Stone Deep. No resting shadows.", "section": "colors" },
+      { "name": "The One-Type Rule", "body": "Playfair Display handles everything narrative; Inter handles everything functional. No mixing weights for decorative effect — switch families at the semantic boundary.", "section": "typography" },
+      { "name": "The Flat-By-Default Rule", "body": "No resting shadows on any surface. If a surface needs to separate, use tonal layering (Warm Stone Deep for alternating sections, white for cards). Shadow is reserved for state feedback only.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do use the Forest green as the primary brand color on buttons, footer, active states, and headings — it carries 30-60% of branded surfaces.",
+      "Do rely on the tonal neutral scale (Warm Stone → Warm Stone Deep → white) for surface hierarchy. One step darker is enough.",
+      "Do keep buttons pill-shaped with generous horizontal padding. The full-radius end caps feel tactile.",
+      "Do stagger scroll-reveal animations using 60-80ms delays across items within a section.",
+      "Do use Playfair Display for storytelling and Inter for commerce — switch at the semantic boundary, not for decorative contrast.",
+      "Do keep body copy in Inter 300 with a max line length of 65-75ch."
+    ],
+    "donts": [
+      "Don't use resting box-shadows on surfaces. The Flat-By-Default Rule: tonal layering, not shadow, creates depth at rest.",
+      "Don't apply heavy gradients, glassmorphism, wood textures, kraft paper, doodle leaves, or any generic 'natural' decorative tropes.",
+      "Don't use gradient text (background-clip: text). Emphasis comes from weight or size, not color transitions.",
+      "Don't pair the two type families as decoration — each has a semantic role.",
+      "Don't exceed 6rem (~96px) for display headings in new compositions. The hero is at the ceiling.",
+      "Don't use numbered section markers (01 / 02 / 03) as decorative section headers.",
+      "Don't use uppercase tracked eyebrows ('ABOUT', 'PROCESS') above every section. Let the heading speak.",
+      "Don't add border-left or border-right greater than 1px as a colored accent stripe. Prefer full background tints or nothing."
+    ]
+  }
+}
