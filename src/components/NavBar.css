@@ -1,0 +1,103 @@
+.site-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 48px;
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 100%;
+  background: linear-gradient(to bottom, var(--cream) 0%, transparent 100%);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.site-nav .logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--forest);
+  text-decoration: none;
+  transition: opacity 200ms ease;
+}
+
+.site-nav .logo {
+  transition: opacity 200ms ease;
+}
+
+.site-nav .nav-links {
+  display: flex;
+  gap: 36px;
+  list-style: none;
+}
+
+.site-nav .nav-links a {
+  text-decoration: none;
+  color: var(--text-light);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  transition: color 200ms ease;
+}
+
+.cart-link {
+  position: relative;
+  color: var(--text-light);
+  transition: color 200ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .site-nav .logo:hover { opacity: 0.7; }
+
+  .site-nav .nav-links a:hover { color: var(--forest); }
+
+  .cart-link:hover { color: var(--forest); }
+}
+
+.cart-badge {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
+  background: var(--forest);
+  color: white;
+  font-size: 0.65rem;
+  font-weight: 600;
+  line-height: 18px;
+  text-align: center;
+  border-radius: 100px;
+  pointer-events: none;
+  animation: badgePop 200ms var(--ease-out);
+}
+
+@keyframes badgePop {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cart-badge {
+    animation: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .site-nav {
+    padding: 16px 24px;
+  }
+
+  .site-nav .nav-links {
+    display: none;
+  }
+}

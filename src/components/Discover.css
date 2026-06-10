@@ -1,0 +1,66 @@
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.feature-card {
+  background: white;
+  border-radius: 16px;
+  padding: 40px 28px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  opacity: 0;
+  transform: translateY(20px);
+  will-change: transform;
+}
+
+.feature-card:active { transform: scale(0.97); }
+
+.feature-card:nth-child(1) { transition: opacity 300ms var(--ease-out) 0ms, transform 300ms var(--ease-out) 0ms; }
+.feature-card:nth-child(2) { transition: opacity 300ms var(--ease-out) 60ms, transform 300ms var(--ease-out) 60ms; }
+.feature-card:nth-child(3) { transition: opacity 300ms var(--ease-out) 120ms, transform 300ms var(--ease-out) 120ms; }
+.feature-card:nth-child(4) { transition: opacity 300ms var(--ease-out) 180ms, transform 300ms var(--ease-out) 180ms; }
+
+@media (hover: hover) and (pointer: fine) {
+  .feature-card:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+    transition: transform 200ms var(--ease-out), box-shadow 200ms ease;
+  }
+}
+
+section[data-visible="true"] .feature-card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.feature-icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 20px;
+}
+
+.feature-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: var(--forest);
+  margin-bottom: 12px;
+}
+
+.feature-card p {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--text-light);
+  font-weight: 300;
+}
+
+@media (max-width: 768px) {
+  .features-grid { grid-template-columns: 1fr; gap: 16px; }
+  .feature-card { padding: 28px 20px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .feature-card { opacity: 1; transform: none; transition: none; }
+}

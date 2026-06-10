@@ -1,0 +1,236 @@
+.product-detail-page {
+  min-height: 100vh;
+}
+
+.product-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 48px;
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+
+.product-breadcrumb a {
+  color: var(--sage);
+  text-decoration: none;
+  transition: color 200ms ease;
+}
+
+.product-breadcrumb a:hover {
+  color: var(--forest);
+}
+
+.product-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.product-detail-visual {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.product-detail-blob {
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  background: var(--water);
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.15;
+  pointer-events: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.product-detail-bottle {
+  position: relative;
+  z-index: 1;
+  width: 180px;
+  height: 280px;
+  will-change: transform;
+}
+
+.product-detail-bottle svg,
+.product-detail-bottle .product-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.product-detail-info {
+  padding-top: 20px;
+}
+
+.product-detail-info .product-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  background: var(--sage);
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 100px;
+  margin-bottom: 16px;
+}
+
+.product-detail-info h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.2rem, 4vw, 3rem);
+  font-weight: 400;
+  color: var(--forest);
+  margin-bottom: 16px;
+  line-height: 1.1;
+}
+
+.product-detail-price {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--sage);
+  margin-bottom: 24px;
+}
+
+.product-detail-desc {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--text-light);
+  font-weight: 300;
+  margin-bottom: 32px;
+}
+
+.product-features {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.product-features li {
+  position: relative;
+  padding-left: 24px;
+  font-size: 0.9rem;
+  color: var(--text-light);
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.product-features li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--sage);
+  opacity: 0.5;
+}
+
+.product-detail-actions {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.product-detail-actions .btn {
+  padding: 14px 36px;
+  flex: 1;
+}
+
+.btn-added {
+  background: var(--sage) !important;
+  color: white !important;
+}
+
+/* More products */
+.product-more {
+  background: var(--cream-dark);
+}
+
+.more-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.more-card {
+  background: white;
+  border-radius: 16px;
+  padding: 32px 24px;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  transition: transform 200ms var(--ease-out), box-shadow 200ms ease;
+  will-change: transform;
+}
+
+.more-card:active { transform: scale(0.97); }
+
+@media (hover: hover) and (pointer: fine) {
+  .more-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  }
+}
+
+.more-card-visual {
+  width: 80px;
+  height: 130px;
+  margin: 0 auto 16px;
+}
+
+.more-card-visual svg,
+.more-card-visual .product-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.more-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--forest);
+  margin-bottom: 4px;
+}
+
+@media (max-width: 768px) {
+  .product-detail-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .product-detail-visual {
+    padding: 20px;
+  }
+
+  .product-detail-bottle {
+    width: 140px;
+    height: 220px;
+  }
+
+  .product-detail-actions {
+    flex-direction: column;
+  }
+
+  .product-detail-actions .btn {
+    width: 100%;
+  }
+
+  .more-grid {
+    grid-template-columns: 1fr;
+  }
+}

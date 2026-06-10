@@ -1,0 +1,233 @@
+.cart-page {
+  min-height: 100vh;
+}
+
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 48px;
+}
+
+.cart-header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 400;
+  color: var(--forest);
+}
+
+.cart-clear-btn {
+  background: none;
+  border: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  color: var(--text-light);
+  cursor: pointer;
+  transition: color 200ms ease;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.cart-clear-btn:hover {
+  color: var(--forest);
+}
+
+/* Empty state */
+.cart-empty {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.cart-empty h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: var(--forest);
+  margin: 20px 0 8px;
+}
+
+.cart-empty p {
+  font-size: 1rem;
+  color: var(--text-light);
+  font-weight: 300;
+  margin-bottom: 32px;
+}
+
+/* Layout */
+.cart-layout {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 48px;
+  align-items: start;
+}
+
+/* Cart items */
+.cart-items {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.cart-item-visual {
+  width: 48px;
+  height: 76px;
+  flex-shrink: 0;
+}
+
+.cart-item-visual svg,
+.cart-item-visual .product-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.cart-item-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.cart-item-info h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--forest);
+  margin-bottom: 2px;
+}
+
+.cart-item-price {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  font-weight: 300;
+}
+
+.cart-item-total {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--forest);
+  min-width: 60px;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.cart-item-remove {
+  background: none;
+  border: none;
+  padding: 6px;
+  color: var(--text-light);
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 150ms ease, color 150ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .cart-item-remove:hover {
+    background: rgba(0,0,0,0.04);
+    color: #c0392b;
+  }
+}
+
+/* Summary */
+.cart-summary {
+  background: white;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  position: sticky;
+  top: 24px;
+}
+
+.cart-summary h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--forest);
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--cream-dark);
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  font-size: 0.9rem;
+  color: var(--text-light);
+  font-weight: 300;
+}
+
+.summary-shipping span:last-child {
+  font-size: 0.8rem;
+}
+
+.summary-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 16px;
+  margin-top: 16px;
+  border-top: 1px solid var(--cream-dark);
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--forest);
+  margin-bottom: 24px;
+}
+
+.cart-summary .btn {
+  display: block;
+  padding: 14px;
+  margin-bottom: 12px;
+}
+
+.cart-summary .btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.cart-continue {
+  display: block;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-light);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 200ms ease;
+}
+
+.cart-continue:hover {
+  color: var(--forest);
+}
+
+@media (max-width: 768px) {
+  .cart-layout {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .cart-item {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .cart-item-info {
+    flex-basis: calc(100% - 68px);
+  }
+
+  .cart-item-total {
+    margin-left: auto;
+  }
+
+  .cart-summary {
+    position: static;
+  }
+}
